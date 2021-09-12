@@ -1,0 +1,17 @@
+services:
+  ibmmqvserver:
+    container_name: ibmmqvserver
+    environment:
+      MQ_QMGR_NAME: QMGR
+      LICENSE: accept
+      LANG: es
+      MQ_ENABLE_METRICS: true
+      LOG_FORMAT: json
+      MQ_ADMIN_PASSWORD: admin12345678
+      MQ_APP_PASSWORD: app12345678
+    image: "ibmcom/mq"
+    ports:
+    - 1414:1414
+    - 9443:9443
+    - 9157:9157
+version: '3'
